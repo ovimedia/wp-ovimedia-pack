@@ -1,0 +1,18 @@
+#loginform {
+    background-color: #fff !important;
+    border-radius: 12px !important;
+}
+
+#loginform p label,
+#loginform a,
+.login #nav a,
+#backtoblog a {
+    color: #8D008D !important;
+}
+
+#wp-submit {
+    background-color: #8D008D !important;
+    border-color: #8D008D !important;
+    color: #fff !important;
+    text-shadow: none !important;
+}
