@@ -23,14 +23,6 @@ function create_form( $form_name, $receiver_email, $legal_notice_url, $form_colu
 
     $div_col = '<div class="vc_col-sm-'.(12 / $form_columns).'"><p>';
 
-
-    $characters = array(    'Š'=>'S', 'š'=>'s', 'Ž'=>'Z', 'ž'=>'z', 'À'=>'A', 'Á'=>'A', 'Â'=>'A', 'Ã'=>'A', 'Ä'=>'A', 'Å'=>'A', 'Æ'=>'A', 'Ç'=>'C', 'È'=>'E', 'É'=>'E',
-                            'Ê'=>'E', 'Ë'=>'E', 'Ì'=>'I', 'Í'=>'I', 'Î'=>'I', 'Ï'=>'I', 'Ñ'=>'N', 'Ò'=>'O', 'Ó'=>'O', 'Ô'=>'O', 'Õ'=>'O', 'Ö'=>'O', 'Ø'=>'O', 'Ù'=>'U',
-                            'Ú'=>'U', 'Û'=>'U', 'Ü'=>'U', 'Ý'=>'Y', 'Þ'=>'B', 'ß'=>'Ss', 'à'=>'a', 'á'=>'a', 'â'=>'a', 'ã'=>'a', 'ä'=>'a', 'å'=>'a', 'æ'=>'a', 'ç'=>'c',
-                            'è'=>'e', 'é'=>'e', 'ê'=>'e', 'ë'=>'e', 'ì'=>'i', 'í'=>'i', 'î'=>'i', 'ï'=>'i', 'ð'=>'o', 'ñ'=>'n', 'ò'=>'o', 'ó'=>'o', 'ô'=>'o', 'õ'=>'o',
-                            'ö'=>'o', 'ø'=>'o', 'ù'=>'u', 'ú'=>'u', 'û'=>'u', 'ý'=>'y', 'þ'=>'b', 'ÿ'=>'y' );
- 
-
     $content = $reply_email = $sender = $body = "";
 
     for($x = 0; $x < count($contact_form_fields); $x++)
@@ -40,7 +32,7 @@ function create_form( $form_name, $receiver_email, $legal_notice_url, $form_colu
         if(strtolower($contact_form_fields[$x]) == "email" )
         {
             $content .= "[email";
-            $sender = $reply_email =  "[".$form_name."-".strtr(strtolower($contact_form_fields[$x]), $characters)."]";
+            $sender = $reply_email =  "[".$form_name."-".str_replace(" ", "",$contact_form_fields[$x])."]";
         }
         else
             $content .= "[text";
@@ -50,11 +42,11 @@ function create_form( $form_name, $receiver_email, $legal_notice_url, $form_colu
         else
             $content .= " ";
             
-        $content .= $form_name."-".strtr(strtolower($contact_form_fields[$x]), $characters)." placeholder '".$contact_form_fields[$x]."']";
+        $content .= $form_name."-".str_replace(" ", "",$contact_form_fields[$x])." placeholder '".translate( ucfirst ($contact_form_fields[$x]), 'wp-ovimedia-pack' )."']";
 
         $content .= $div_col_end;
 
-        $body .=  $contact_form_fields[$x].": [".$form_name."-".strtr(strtolower($contact_form_fields[$x]), $characters)."]\n";
+        $body .=  translate( ucfirst ($contact_form_fields[$x]), 'wp-ovimedia-pack' ).": [".$form_name."-".str_replace(" ", "",$contact_form_fields[$x])."]\n";
     }
 
 if($include_message == 'yes')
@@ -99,7 +91,7 @@ $content .= "<div class='vc_col-sm-12'><p>[submit '".translate( "Send", "wp-ovim
 	
 	add_post_meta($id, "_mail", $values);
 		
-	echo "Formulario generado correctamente.";
+	echo "Formulario ".$form_name." generado correctamente.";
 }
 
 ?>

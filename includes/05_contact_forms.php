@@ -34,9 +34,9 @@
 
                 for ($x = 0; $x < count($fields); $x++) 
                 { 
-                    echo "<option value='".translate( ucfirst ($fields[$x]), 'wp-ovimedia-pack' )."' ";                             
+                    echo "<option value='".$fields[$x]."' ";                             
 
-                    if(in_array(translate( ucfirst ($fields[$x]), 'wp-ovimedia-pack' ), $this->wop_options['contact_form_fields'] )) 
+                    if(in_array($fields[$x], $this->wop_options['contact_form_fields'] )) 
                         echo ' selected="selected" '; 
 
                     echo ">".translate( ucfirst ($fields[$x]), 'wp-ovimedia-pack' )."</option>"; 
@@ -57,9 +57,9 @@
 
                 for ($x = 0; $x < count($fields); $x++) 
                 { 
-                    echo "<option value='".translate( ucfirst ($fields[$x]), 'wp-ovimedia-pack' )."' ";                             
+                    echo "<option value='".$fields[$x]."' ";                             
 
-                    if(in_array(translate( ucfirst ($fields[$x]), 'wp-ovimedia-pack' ), $this->wop_options['contact_form_required_fields'] )) 
+                    if(in_array($fields[$x], $this->wop_options['contact_form_required_fields'] )) 
                         echo ' selected="selected" '; 
 
                     echo ">".translate( ucfirst ($fields[$x]), 'wp-ovimedia-pack' )."</option>"; 
