@@ -5,7 +5,7 @@ Description: Pack of functional modules for Wordpress.
 Author: Ovi García - ovimedia.es
 Author URI: http://www.ovimedia.es/
 Text Domain: wp-ovimedia-pack
-Version: 1.0
+Version: 1.1.1
 Plugin URI: http://www.ovimedia.es/
 */
 
@@ -34,8 +34,6 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
 
             add_filter( 'login_headerurl', array( $this,'wop_logo_url_login') ); 
 
-            add_action( 'widgets_init', array( $this, 'extra_footer_widgets') );
-
             if($this->wop_options["enable_floating_widget"] == "on") 
             {  
                 add_action( 'widgets_init', array( $this, 'floating_widget') );
@@ -43,7 +41,10 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
             }
 
             if($this->wop_options["enable_footer"] == "on")    
+            {
+                add_action( 'widgets_init', array( $this, 'extra_footer_widgets') );
                 add_action( 'wp_footer', array( $this, 'wop_show_extra_footer' ), 100);
+            }
 
             if($this->wop_options["core_updates"] == "on")
                 add_filter('pre_site_transient_update_core', array( $this,'wop_remove_updates'));
@@ -105,10 +106,16 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
 
             wp_register_style( 'wop_switchery_style_css', WP_PLUGIN_URL. '/'.basename( dirname( __FILE__ ) ).'/css/switchery.min.css', false, '1.0.0' );
             wp_enqueue_style( 'wop_switchery_style_css' );
+       
+            wp_register_style( 'codes_select2_css', WP_PLUGIN_URL. '/'.basename( dirname( __FILE__ ) ).'/css/select2.min.css', false, '1.0.0' );
+
+            wp_enqueue_style( 'codes_select2_css' );
 
             wp_enqueue_script( 'wop_script_spectrum', WP_PLUGIN_URL. '/'.basename( dirname( __FILE__ ) ).'/js/spectrum.js', array('jquery') );
             wp_enqueue_script( 'wop_script_admin', WP_PLUGIN_URL. '/'.basename( dirname( __FILE__ ) ).'/js/wop_admin.js', array('jquery') );
             wp_enqueue_script( 'wop_switchery_script', WP_PLUGIN_URL. '/'.basename( dirname( __FILE__ ) ).'/js/switchery.min.js', array('jquery') ); 
+
+            wp_enqueue_script( 'codes_select2', WP_PLUGIN_URL. '/'.basename( dirname( __FILE__ ) ).'/js/select2.min.js', array('jquery') );
         }
                        
         public function wop_form()
@@ -174,18 +181,18 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
         {
             if($this->wop_options['enable_cookies'] == "on") {
             ?>
-            <div class="wop_cookies" style="<?php echo $this->wop_options['position_cookies']; ?>: 0px; 
-            background-color: <?php echo $this->wop_options['background_color_cookies']; ?>;
+            <div class="wop_cookies cookies_pos_<?php echo $this->wop_options['position_cookies']; ?>" 
+            style="background-color: <?php echo $this->wop_options['background_color_cookies']; ?>;
             box-shadow: 0px 0px <?php echo $this->wop_options['box_shadow_cookies']; ?>px #000;">
 
                     <div class="block_cookies">
                         <div <?php if($this->wop_options['hide_cookies'] != "auto") echo 'class="col_2_3"' ?>>
 
-                            <p class="texto_cookies" style="line-height: <?php echo $this->wop_options['font_size_cookies']; ?>px;font-size: <?php echo $this->wop_options['font_size_cookies']; ?>px; color: #<?php echo $this->wop_options['font_color_cookies']; ?>;">
+                            <p class="texto_cookies" style="line-height: <?php echo $this->wop_options['font_size_cookies']; ?>px;font-size: <?php echo $this->wop_options['font_size_cookies']; ?>px; color: <?php echo $this->wop_options['font_color_cookies']; ?>;">
 
                                 <?php echo $this->wop_options["text_message_cookies"]; ?>
 
-                                <strong><a style="text-decoration: underline;color: #<?php echo $this->wop_options['font_color_cookies']; ?>;" target="_blank" 
+                                <strong><a style="text-decoration: underline;color: <?php echo $this->wop_options['font_color_cookies']; ?>;" target="_blank" 
                                 href="<?php echo get_home_url().'/'.$this->wop_options['slug_politica_cookies']; ?>"> 
                                 <?php echo $this->wop_options["link_text_cookies"]; ?></a></strong>
 
@@ -285,7 +292,12 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
 
         public function wop_show_floating_widget()
         {
-            echo "<div id='floating_widget_button_".$this->wop_options['floating_widget_location']."'>".$this->wop_options['floating_widget_button_text']."</div>";
+            echo "<div id='floating_widget_button_".$this->wop_options['floating_widget_location']."'";
+
+            echo "style='background-color: ".$this->wop_options['floating_widget_button_background_color'].";
+            color: ".$this->wop_options['floating_widget_button_font_color'].";'" ; 
+            
+            echo ">".$this->wop_options['floating_widget_button_text']."</div>";
 
             echo "<div id='floating_widget_".$this->wop_options['floating_widget_location']."'
             class='".$this->wop_options['floating_widget_location']."_hide'>";

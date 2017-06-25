@@ -85,6 +85,17 @@
 
     value="<?php echo $this->wop_options['floating_widget_button_text']; ?>" /></p>
 
+    <p><label for="floating_widget_button_background_color"><?php echo translate( 'Widget button background color:', 'wp-ovimedia-pack' ); ?></label>
+
+    <input type="text"  id="floating_widget_button_background_color" name="floating_widget_button_background_color" 
+
+    class="jscolor" value="<?php echo $this->wop_options['floating_widget_button_background_color']; ?>" /></p>
+
+    <p><label for="floating_widget_button_font_color"><?php echo translate( 'Widget button font color:', 'wp-ovimedia-pack' ); ?></label>
+
+    <input type="text"  id="floating_widget_button_font_color" name="floating_widget_button_font_color" 
+
+    class="jscolor" value="<?php echo $this->wop_options['floating_widget_button_font_color']; ?>" /></p>
 
     <p><label for="floating_widget_background_color"><?php echo translate( 'Widget background color:', 'wp-ovimedia-pack' ); ?></label>
 

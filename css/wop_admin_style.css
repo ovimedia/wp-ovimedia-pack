@@ -96,11 +96,27 @@
 
 .wrap_wop_form p input,
 .wrap_wop_form p select {
-    display: flex !important;
     width: 90%;
     margin: 5px 5% 18px;
     border: 1px solid #000;
     border-radius: 5px;
+}
+
+.select2-container {
+    width: 90% !important;
+    margin-left: 5% !important;
+}
+
+.select2-container--open .select2-dropdown {
+    left: -5.5% !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+    height: 26px !important;
+}
+
+.wrap_wop_form p input {
+    display: flex !important;
 }
 
 #messages_plugin {

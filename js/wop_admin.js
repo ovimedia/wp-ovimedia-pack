@@ -11,7 +11,7 @@ jQuery(document).ready(function(jQuery) {
         chooseText: "Elegir"
     });
 
-    //BOTON PARA CREAR PAGINA DE AVISO LEGAL
+
     jQuery("#button_law_page").click(function() {
 
         var address = "";
@@ -47,7 +47,6 @@ jQuery(document).ready(function(jQuery) {
         });
     });
 
-    //BOTON PARA CREAR PAGINAS DE COOKIES
     jQuery("#button_cookies_pages").click(function() {
 
         var request = jQuery.ajax({
@@ -73,7 +72,6 @@ jQuery(document).ready(function(jQuery) {
         jQuery("#messages_plugin").fadeOut(6000);
     }
 
-    //FUNCION PARA MOSTAR EL CONTENIDO EN PESTAÑAS	
     jQuery(".tab_links").click(function() {
         jQuery(".tab_content").css("display", "none");
 
@@ -182,7 +180,6 @@ jQuery(document).ready(function(jQuery) {
         }
     }
 
-    //BOTON PARA GENERAR UN NUEVO CONTACT FORM
     jQuery("#contact_form_generator").click(function() {
 
         var request = jQuery.ajax({
@@ -192,7 +189,13 @@ jQuery(document).ready(function(jQuery) {
                 form_name: jQuery("#contact_form_name").val(),
                 receiver_email: jQuery("#contact_form_receiver_email").val(),
                 form_type: jQuery("#contact_form_type").val(),
-                legal_notice_url: jQuery("#slug_aviso_legal").val()
+                legal_notice_url: jQuery("#slug_aviso_legal").val(),
+                form_columns: jQuery("#contact_form_columns").val(),
+                include_legal_notice: jQuery("#contact_form_include_legal_notice").val(),
+                include_message: jQuery("#contact_form_include_message").val(),
+                contact_form_fields: jQuery("#contact_form_fields").val(),
+                contact_form_subject: jQuery("#contact_form_subject").val(),
+                contact_form_required_fields: jQuery("#contact_form_required_fields").val()
             }
         });
 
@@ -201,4 +204,6 @@ jQuery(document).ready(function(jQuery) {
             view_messages(msg);
         });
     });
+
+    jQuery('.wrap_wop_form .select2').select2({ tags: true });
 });

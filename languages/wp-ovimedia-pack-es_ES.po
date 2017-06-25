@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2017-06-22 00:06+0200\n"
+"PO-Revision-Date: 2017-06-25 19:08+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -305,13 +305,67 @@ msgid "Contact form name:"
 msgstr "Nombre del formulario de contacto:"
 
 msgid "Contact form receiver:"
-msgstr "Receptor del formulario de contacto:"
+msgstr "Destinatario del formulario de contacto:"
 
 msgid "Contact form type:"
 msgstr "Tipo de formulario de contacto:"
 
-msgid "Generate contact form:"
-msgstr "Generar formulario de contacto:"
+msgid "Generate contact form"
+msgstr "Generar formulario de contacto"
 
 msgid "To use this function you need to install and activate contact form 7 plugin."
 msgstr "Para poder utilizar esta opción necesitas instalar y activar el plugin contact form 7."
+
+msgid "Widget button font color:"
+msgstr "Color de letra botón del widget:"
+
+msgid "Widget button background color:"
+msgstr "Color de fondo botón del widget:"
+
+msgid "Include message field in contact form:"
+msgstr "Incluir campo de mensaje en el formulario:"
+
+msgid "Include legal notice field in contact form:"
+msgstr "Incluir campo de aviso legal en el formulario:"
+
+msgid "Yes"
+msgstr "Si"
+
+msgid "No"
+msgstr "No"
+
+msgid "Contact form columns:"
+msgstr "Columnas del formulario de contacto:"
+
+msgid "Contact form fields:"
+msgstr "Campos del formulario de contacto:"
+
+msgid "Name"
+msgstr "Nombre"
+
+msgid "Last name"
+msgstr "Apellidos"
+
+msgid "Phone"
+msgstr "Teléfono"
+
+msgid "Subject"
+msgstr "Asunto"
+
+msgid "Contact form subject:"
+msgstr "Asunto del formulario de contacto:"
+
+msgid "Message"
+msgstr "Mensaje"
+
+msgid "Send"
+msgstr "Enviar"
+
+msgid "I accept the"
+msgstr "Acepto la"
+
+msgid "Privacy Policy"
+msgstr "Política de Privacidad"
+
+msgid "Contact form required fields:"
+msgstr "Campos requeridos del formulario de contacto:"

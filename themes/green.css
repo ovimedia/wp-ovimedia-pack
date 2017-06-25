@@ -1,18 +1,18 @@
-#loginform {
-    background-color: #fff !important;
-    border-radius: 12px !important;
-}
-
-#loginform p label,
-#loginform a,
-.login #nav a,
-#backtoblog a {
-    color: #3DBC00 !important;
-}
-
-#wp-submit {
-    background-color: #3DBC00 !important;
-    border-color: #3DBC00 !important;
-    color: #fff !important;
-    text-shadow: none !important;
+#loginform {
+    background-color: #fff !important;
+    border-radius: 12px !important;
+}
+
+#loginform p label,
+#loginform a,
+.login #nav a,
+#backtoblog a {
+    color: #3DBC00 !important;
+}
+
+#wp-submit {
+    background-color: #3DBC00 !important;
+    border-color: #3DBC00 !important;
+    color: #fff !important;
+    text-shadow: none !important;
 }
