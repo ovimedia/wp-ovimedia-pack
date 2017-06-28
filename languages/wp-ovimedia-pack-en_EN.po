@@ -1,0 +1,371 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2017-06-26 21:36+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# @ su
+#: wp-ovimedia-pack.php
+msgid "Notice background color:"
+msgstr "Notice background color:"
+
+msgid "Notice font color:"
+msgstr "Notice font color:"
+
+msgid "Acept button background color:"
+msgstr "Acept button background color:"
+
+msgid "Cancel button background color:"
+msgstr "Cancel button background color:"
+
+msgid "Acept button font color:"
+msgstr "Acept button font color:"
+
+msgid "Cancel button font color:"
+msgstr "Cancel button font color:"
+
+msgid "Position message cookies:"
+msgstr "Position message cookies:"
+
+msgid "Top"
+msgstr "Top"
+
+msgid "Bottom"
+msgstr "Bottom"
+
+msgid "Hide message:"
+msgstr "Hide message:"
+
+msgid "Auto"
+msgstr "Auto"
+
+msgid "Only acept button"
+msgstr "Only acept button"
+
+msgid "Acept and cancel buttons"
+msgstr "Acept and cancel buttons"
+
+msgid "Cookies message text:"
+msgstr "Cookies message text:"
+
+msgid "Link cookies text:"
+msgstr "Link cookies text:"
+
+msgid "the conditions of use."
+msgstr "the conditions of use."
+
+msgid "This website uses cookies. If you continue browsing we understand that you accept"
+msgstr "This website uses cookies. If you continue browsing we understand that you accept"
+
+msgid "Ok"
+msgstr "Ok"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Button text acept cookies:"
+msgstr "Button text acept cookies:"
+
+msgid "Button text cancel cookies:"
+msgstr "Button text cancel cookies:"
+
+msgid "Save changes"
+msgstr "Save changes"
+
+msgid "Create cookie pages"
+msgstr "Create cookie pages"
+
+msgid "Cookie law title page:"
+msgstr "Cookie law title page:"
+
+msgid "Cookie Law"
+msgstr "Cookie Law"
+
+msgid "More information cookies title page:"
+msgstr "More information cookies title page:"
+
+msgid "More information about cookies"
+msgstr "More information about cookies"
+
+msgid "Cookie law slug page:"
+msgstr "Cookie law slug page:"
+
+msgid "More information cookies slug page:"
+msgstr "More information cookies slug page:"
+
+msgid "cookie-law"
+msgstr "cookie-law"
+
+msgid "more-information-about-cookies"
+msgstr "more-information-about-cookies"
+
+msgid "Legal Notice"
+msgstr "Legal Notice"
+
+msgid "legal-notice"
+msgstr "legal-notice"
+
+msgid "Create law notice page"
+msgstr "Create law notice page"
+
+msgid "Border radius buttons:"
+msgstr "Border radius buttons:"
+
+msgid "Cookies notice font size:"
+msgstr "Cookies notice font size:"
+
+msgid "Legal notice title page:"
+msgstr "Legal notice title page:"
+
+msgid "Legal notice slug page:"
+msgstr "Legal notice slug page:"
+
+msgid "Company name:"
+msgstr "Company name:"
+
+msgid "Company"
+msgstr "Company"
+
+msgid "Company address:"
+msgstr "Company address:"
+
+msgid "Address"
+msgstr "Address"
+
+msgid "with registered office in"
+msgstr "with registered office in"
+
+msgid "with number CIF"
+msgstr "with number CIF"
+
+msgid "Company CIF:"
+msgstr "Company CIF:"
+
+msgid "Company Mercantile Registry:"
+msgstr "Company Mercantile Registry:"
+
+msgid "Mercantile Registry"
+msgstr "Mercantile Registry"
+
+msgid "and registered in the Mercantile Registry"
+msgstr "and registered in the Mercantile Registry"
+
+msgid "Company domain:"
+msgstr "Company domain:"
+
+msgid "Domain"
+msgstr "Domain"
+
+msgid "Company E-mail:"
+msgstr "Company E-mail:"
+
+msgid "Enable cookies notice:"
+msgstr "Enable cookies notice:"
+
+msgid "Updates"
+msgstr "Updates"
+
+msgid "Disable core updates:"
+msgstr "Disable core updates:"
+
+msgid "Disable theme updates:"
+msgstr "Disable theme updates:"
+
+msgid "Disable plugin updates:"
+msgstr "Disable plugin updates:"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "URL login redirect:"
+msgstr "URL login redirect:"
+
+msgid "Enable login redirect:"
+msgstr "Enable login redirect:"
+
+msgid "URL"
+msgstr "URL"
+
+msgid "Enable logout redirect:"
+msgstr "Enable logout redirect:"
+
+msgid "URL logout redirect:"
+msgstr "URL logout redirect:"
+
+msgid "Login theme:"
+msgstr "Login theme:"
+
+msgid "Default"
+msgstr "Default"
+
+msgid "Box shadow cookies:"
+msgstr "Box shadow cookies:"
+
+msgid "Add logo"
+msgstr "Add logo"
+
+msgid "Add background"
+msgstr "Add background"
+
+msgid "Remove logo"
+msgstr "Remove logo"
+
+msgid "Remove background"
+msgstr "Remove background"
+
+msgid "Footer"
+msgstr "Footer"
+
+msgid "Enable extra footer:"
+msgstr "Enable extra footer:"
+
+msgid "px or %"
+msgstr "px or %"
+
+msgid "Footer columns:"
+msgstr "Footer columns:"
+
+msgid "Footer width:"
+msgstr "Footer width:"
+
+msgid "Footer background color:"
+msgstr "Footer background color:"
+
+msgid "Footer font color:"
+msgstr "Footer font color:"
+
+msgid "Footer right padding:"
+msgstr "Footer right padding:"
+
+msgid "Footer left padding:"
+msgstr "Footer left padding:"
+
+msgid "Floating Widget"
+msgstr "Floating Widget"
+
+msgid "Enable floating widget:"
+msgstr "Enable floating widget:"
+
+msgid "Widget background color:"
+msgstr "Widget background color:"
+
+msgid "Widget font color:"
+msgstr "Widget font color:"
+
+msgid "Left"
+msgstr "Left"
+
+msgid "Right"
+msgstr "Right"
+
+msgid "Widget position:"
+msgstr "Widget position:"
+
+msgid "Widget location:"
+msgstr "Widget location:"
+
+msgid "Widget button text:"
+msgstr "Widget button text:"
+
+msgid "Widget font size:"
+msgstr "Widget font size:"
+
+msgid "Widget width:"
+msgstr "Widget width:"
+
+msgid "Widget height:"
+msgstr "Widget height:"
+
+msgid "Widget delay appearance:"
+msgstr "Widget delay appearance:"
+
+msgid "In seconds"
+msgstr "In seconds"
+
+msgid "Contact Forms"
+msgstr "Contact Forms"
+
+msgid "Column"
+msgstr "Column"
+
+msgid "Columns"
+msgstr "Columns"
+
+msgid "Contact form name:"
+msgstr "Contact form name:"
+
+msgid "Contact form receiver:"
+msgstr "Contact form receiver:"
+
+msgid "Contact form type:"
+msgstr "Contact form type:"
+
+msgid "Generate contact form"
+msgstr "Generate contact form"
+
+msgid "To use this function you need to install and activate contact form 7 plugin."
+msgstr "To use this function you need to install and activate contact form 7 plugin."
+
+msgid "Widget button font color:"
+msgstr "Widget button font color:"
+
+msgid "Widget button background color:"
+msgstr "Widget button background color:"
+
+msgid "Include message field in contact form:"
+msgstr "Include message field in contact form:"
+
+msgid "Include legal notice field in contact form:"
+msgstr "Include legal notice field in contact form:"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "No"
+msgstr "No"
+
+msgid "Contact form columns:"
+msgstr "Contact form columns:"
+
+msgid "Contact form fields:"
+msgstr "Contact form fields:"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Last name"
+msgstr "Last name"
+
+msgid "Phone"
+msgstr "Phone"
+
+msgid "Subject"
+msgstr "Subject"
+
+msgid "Contact form subject:"
+msgstr "Contact form subject:"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Send"
+msgstr "Send"
+
+msgid "I accept the"
+msgstr "I accept the"
+
+msgid "Privacy Policy"
+msgstr "Privacy Policy"
+
+msgid "Contact form required fields:"
+msgstr "Contact form required fields:"

@@ -102,16 +102,16 @@
     border-radius: 5px;
 }
 
-.select2-container {
+.wrap_wop_form .select2-container {
     width: 90% !important;
     margin-left: 5% !important;
 }
 
-.select2-container--open .select2-dropdown {
+.wrap_wop_form .select2-container--open .select2-dropdown {
     left: -5.5% !important;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+.wrap_wop_form .select2-selection--multiple .select2-selection__rendered {
     height: 30px !important;
 }
 

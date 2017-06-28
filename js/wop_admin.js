@@ -28,9 +28,10 @@ jQuery(document).ready(function(jQuery) {
             register = jQuery("#pre_register_empresa").val() + jQuery("#register_empresa").val()
 
         var request = jQuery.ajax({
-            url: jQuery("#url_base").val() + "pages.php",
+            url: "admin-ajax.php",
             method: "POST",
             data: {
+                action: "wop_generate_pages",
                 name_empresa: jQuery("#name_empresa").val(),
                 address_empresa: address,
                 cif_empresa: cif,
@@ -50,9 +51,10 @@ jQuery(document).ready(function(jQuery) {
     jQuery("#button_cookies_pages").click(function() {
 
         var request = jQuery.ajax({
-            url: jQuery("#url_base").val() + "pages.php",
+            url: "admin-ajax.php",
             method: "POST",
             data: {
+                action: "wop_generate_pages",
                 slug_mas_informacion: jQuery("#slug_mas_informacion").val(),
                 slug_politica_cookies: jQuery("#slug_politica_cookies").val(),
                 title_politica_cookies: jQuery("#title_politica_cookies").val(),
@@ -67,7 +69,7 @@ jQuery(document).ready(function(jQuery) {
 
     function view_messages(msg) {
         jQuery("#messages_plugin").empty();
-        jQuery("#messages_plugin").html(msg);
+        jQuery("#messages_plugin").html(msg.substring(0, msg.length - 1));
         jQuery("#messages_plugin").fadeIn(400);
         jQuery("#messages_plugin").fadeOut(6000);
     }
@@ -183,9 +185,10 @@ jQuery(document).ready(function(jQuery) {
     jQuery("#contact_form_generator").click(function() {
 
         var request = jQuery.ajax({
-            url: jQuery("#url_base").val() + "forms.php",
+            url: "admin-ajax.php",
             method: "POST",
             data: {
+                action: "wop_generate_forms",
                 form_name: jQuery("#contact_form_name").val(),
                 receiver_email: jQuery("#contact_form_receiver_email").val(),
                 form_type: jQuery("#contact_form_type").val(),
