@@ -5,7 +5,7 @@ Description: Pack of functional modules for Wordpress.
 Author: Ovi García - ovimedia.es
 Author URI: http://www.ovimedia.es/
 Text Domain: wp-ovimedia-pack
-Version: 1.1.3
+Version: 1.2
 Plugin URI: http://www.ovimedia.es/
 */
 
@@ -130,47 +130,43 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
 
             <?php 
 
-                $sections = array();
+                  $sections = array(
+                            "updates.php",
+                            "legal_notice.php",
+                            "cookies.php",
+                            "login.php",
+                            "footer.php",
+                            "contact_forms.php",
+                            "floating_widget.php");
                 
-                $ruta = '../wp-content/plugins/'.basename( dirname( __FILE__ ) ).'/includes/';
-                
-                if ($gestor = opendir($ruta)) 
-                {
-                    while (false !== ($file = readdir($gestor))) 
-                        if ($file != "." && $file != "..") 
-                            $sections[] = $file;
-
-                    closedir($gestor);
-                }
-
-                sort($sections);
-
                 ?>
                 
                 <ul id="list_options">
                     <?php 
                         for($x = 0; $x < count($sections); $x++)  
                         {
-                            echo "<li id='".substr($sections[$x], 3, -4)."' title='#".substr($sections[$x], 3, -4)."_container' class='tab_links ";
+                            echo "<li id='".substr($sections[$x], 0, -4)."' title='#".substr($sections[$x], 0, -4)."_container' class='tab_links ";
 
-                            if($x == 0) echo " active_tab' >";
-                            else echo "' >";
+                            if($x == 0) 
+                                echo " active_tab' >";
+                            else 
+                                echo "' >";
 
-                            echo translate(  ucwords(str_replace("_", " ", substr($sections[$x], 3, -4))), 'wp-ovimedia-pack' )."</li>";
+                            echo translate(ucwords(str_replace("_", " ", substr($sections[$x], 0, -4))), 'wp-ovimedia-pack' )."</li>";
                         }
                     ?>
                 </ul>
 
                 <?php 
-
-                    foreach (glob($ruta."*.php") as $module)
-                    {
-                        include $module;
-                    }
-
+                    $url = "../wp-content/plugins/".basename( dirname( __FILE__ ) )."/includes/";
+                    include_once $url.$sections[0];
+                    include_once $url.$sections[1];
+                    include_once $url.$sections[2];
+                    include_once $url.$sections[3];
+                    include_once $url.$sections[4];
+                    include_once $url.$sections[5];
+                    include_once $url.$sections[6];          
                 ?>
-
-                <input type="hidden" id="url_base" value="<?php echo WP_PLUGIN_URL. '/'.basename( dirname( __FILE__ ) ).'/'; ?>" />
                 
                 <p><input type="submit" value="<?php echo translate( 'Save changes', 'wp-ovimedia-pack' )  ?>" class="button button-primary" /></div></p>
            
@@ -557,7 +553,7 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
         {
             $content .= "<div class='vc_col-sm-12'><p>[textarea* ".$form_name."-".translate( "Message", "wp-ovimedia-pack" )." placeholder '".translate( "Message", "wp-ovimedia-pack" )."'] </p></div>\n";
 
-            $body .=  "\n".translate( 'Message', 'wp-ovimedia-pack' ).":\n [".$form_name."-".translate( 'Message', 'wp-ovimedia-pack' )."]\n";
+            $body .=  "\n".translate( 'Message', 'wp-ovimedia-pack' ).":\n[".$form_name."-".translate( 'Message', 'wp-ovimedia-pack' )."]\n";
         }
 
         if($include_legal_notice == 'yes')

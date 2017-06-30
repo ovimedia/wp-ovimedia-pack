@@ -1,8 +1,8 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit;  ?>
+
 <div id="contact_forms_container" class="tab_content">
 
-<?php 
-
-    if ( is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) { ?>
+<?php   if ( is_plugin_active( 'contact-form-7/wp-contact-form-7.php' ) ) { ?>
 
     <p><label for="contact_form_name"><?php echo translate( 'Contact form name:', 'wp-ovimedia-pack' ); ?></label>
 

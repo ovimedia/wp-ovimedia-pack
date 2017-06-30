@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit;  ?>
+
 <div id="floating_widget_container" class="tab_content">
     
     <p>

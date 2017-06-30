@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit;  ?>
+
 <div id="footer_container" class="tab_content">
     
     <p>

@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit;  ?>
+
 <div id="legal_notice_container" class="tab_content">
 
     <p><label for="title_aviso_legal"><?php echo translate( 'Legal notice title page:', 'wp-ovimedia-pack' ); ?></label>

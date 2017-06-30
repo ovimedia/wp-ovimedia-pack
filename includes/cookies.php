@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit;  ?>
+
 <div id="cookies_container" class="tab_content">
     
     <p>

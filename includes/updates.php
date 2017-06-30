@@ -1,3 +1,5 @@
+<?php if ( ! defined( 'ABSPATH' ) ) exit;  ?>
+
 <div id="updates_container" class="tab_content">
     
     <p><label for="core_updates" class="label_switchery">
