@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2017-06-26 21:36+0200\n"
+"PO-Revision-Date: 2017-07-01 20:17+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -369,3 +369,12 @@ msgstr "Privacy Policy"
 
 msgid "Contact form required fields:"
 msgstr "Contact form required fields:"
+
+msgid "Floating button URL:"
+msgstr "Floating button URL:"
+
+msgid "Floating button action:"
+msgstr "Floating button action:"
+
+msgid "Link"
+msgstr "Link"

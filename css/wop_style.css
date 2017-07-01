@@ -124,13 +124,19 @@
 }
 
 #floating_widget_button_right,
-#floating_widget_button_top,
 #floating_widget_button_bottom,
 #floating_widget_button_left {
     position: fixed;
     z-index: 9999;
     padding: 8px 40px;
     border-radius: 15px 15px 0px 0px;
+}
+
+#floating_widget_button_top {
+    position: fixed;
+    z-index: 9999;
+    padding: 8px 40px;
+    border-radius: 0px 0px 15px 15px;
 }
 
 @media screen and (max-width: 920px) {

@@ -5,7 +5,7 @@ Description: Pack of functional modules for Wordpress.
 Author: Ovi García - ovimedia.es
 Author URI: http://www.ovimedia.es/
 Text Domain: wp-ovimedia-pack
-Version: 1.2
+Version: 1.2.1
 Plugin URI: http://www.ovimedia.es/
 */
 
@@ -159,6 +159,7 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
 
                 <?php 
                     $url = "../wp-content/plugins/".basename( dirname( __FILE__ ) )."/includes/";
+                    
                     include_once $url.$sections[0];
                     include_once $url.$sections[1];
                     include_once $url.$sections[2];
@@ -292,12 +293,21 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
 
         public function wop_show_floating_widget()
         {
-            echo "<div id='floating_widget_button_".$this->wop_options['floating_widget_location']."'";
+            echo "<div id='floating_widget_button_".$this->wop_options['floating_widget_location']."' ";
+            
+            if($this->wop_options['floating_widget_button_mode'] == "link") echo "class='floating_button_url' ";
 
             echo "style='background-color: ".$this->wop_options['floating_widget_button_background_color'].";
-            color: ".$this->wop_options['floating_widget_button_font_color'].";'" ; 
+            color: ".$this->wop_options['floating_widget_button_font_color'].";' >" ; 
             
-            echo ">".$this->wop_options['floating_widget_button_text']."</div>";
+            if($this->wop_options['floating_widget_button_mode'] == "link")
+            {
+                echo "<a style='color: ".$this->wop_options['floating_widget_button_font_color'].";' 
+                href='".$this->wop_options['floating_widget_url']."'>";
+                echo $this->wop_options['floating_widget_button_text']."</a></div>";
+            }
+            else
+                echo $this->wop_options['floating_widget_button_text']."</div>";
 
             echo "<div id='floating_widget_".$this->wop_options['floating_widget_location']."'
             class='".$this->wop_options['floating_widget_location']."_hide'>";
@@ -458,7 +468,7 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
         public function wop_generate_forms()
         {
             if(isset($_REQUEST['form_name']))
-                $this->create_form($_REQUEST['form_name'], $_REQUEST['receiver_email'], 
+                $this->create_form(str_replace(" ", "-",$_REQUEST['form_name']), $_REQUEST['receiver_email'], 
                 $_REQUEST['legal_notice_url'], $_REQUEST['form_columns'], $_REQUEST['include_legal_notice'],
                 $_REQUEST['include_message'], $_REQUEST['contact_form_fields'], $_REQUEST['contact_form_subject'], $_REQUEST['contact_form_required_fields'] );
         }

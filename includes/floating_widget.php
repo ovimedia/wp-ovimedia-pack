@@ -42,23 +42,6 @@
 
     value="<?php echo $this->wop_options['floating_widget_position']; ?>" /></p>
 
-    <p><label for="floating_widget_width"><?php echo translate( 'Widget width:', 'wp-ovimedia-pack' ); ?></label>
-
-    <input type="text"  id="floating_widget_width" name="floating_widget_width" 
-
-    placeholder="<?php echo translate( 'px or %', 'wp-ovimedia-pack' ); ?>" 
-
-    value="<?php echo $this->wop_options['floating_widget_width']; ?>" /></p>
-
-    <p><label for="floating_widget_height"><?php echo translate( 'Widget height:', 'wp-ovimedia-pack' ); ?></label>
-
-    <input type="text"  id="floating_widget_height" name="floating_widget_height" 
-
-    placeholder="<?php echo translate( 'px or %', 'wp-ovimedia-pack' ); ?>" 
-
-    value="<?php echo $this->wop_options['floating_widget_height']; ?>" /></p>
-
-
     <p><label for="floating_widget_font_size"><?php echo translate( 'Widget font size:', 'wp-ovimedia-pack' ); ?></label>
 
         <select id="floating_widget_font_size" name="floating_widget_font_size" >
@@ -98,6 +81,52 @@
     <input type="text"  id="floating_widget_button_font_color" name="floating_widget_button_font_color" 
 
     class="jscolor" value="<?php echo $this->wop_options['floating_widget_button_font_color']; ?>" /></p>
+
+    <p><label for="floating_widget_button_mode"><?php echo translate( 'Floating button action:', 'wp-ovimedia-pack' ); ?></label>
+
+        <select id="floating_widget_button_mode" name="floating_widget_button_mode" >
+
+            <?php           
+
+                $modes = array("widget", "link");
+
+                for ($x = 0; $x < count($modes); $x++) 
+                { 
+                    echo "<option value='".$modes[$x]."' ";                             
+
+                    if($this->wop_options['floating_widget_button_mode'] == $modes[$x]) 
+                        echo ' selected="selected" '; 
+
+                    echo ">".translate( ucfirst ($modes[$x]), 'wp-ovimedia-pack' )."</option>"; 
+
+                } 
+
+            ?>
+        </select>
+    </p>
+
+    <p><label for="floating_widget_url"><?php echo translate( 'Floating button URL:', 'wp-ovimedia-pack' ); ?></label>
+
+    <input type="text"  id="floating_widget_url" name="floating_widget_url" 
+
+    value="<?php echo $this->wop_options['floating_widget_url']; ?>" /></p>
+
+    <p><label for="floating_widget_width"><?php echo translate( 'Widget width:', 'wp-ovimedia-pack' ); ?></label>
+
+    <input type="text"  id="floating_widget_width" name="floating_widget_width" 
+
+    placeholder="<?php echo translate( 'px or %', 'wp-ovimedia-pack' ); ?>" 
+
+    value="<?php echo $this->wop_options['floating_widget_width']; ?>" /></p>
+
+    <p><label for="floating_widget_height"><?php echo translate( 'Widget height:', 'wp-ovimedia-pack' ); ?></label>
+
+    <input type="text"  id="floating_widget_height" name="floating_widget_height" 
+
+    placeholder="<?php echo translate( 'px or %', 'wp-ovimedia-pack' ); ?>" 
+
+    value="<?php echo $this->wop_options['floating_widget_height']; ?>" /></p>
+
 
     <p><label for="floating_widget_background_color"><?php echo translate( 'Widget background color:', 'wp-ovimedia-pack' ); ?></label>
 
