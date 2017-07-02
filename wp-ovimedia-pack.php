@@ -5,7 +5,7 @@ Description: Pack of functional modules for Wordpress.
 Author: Ovi García - ovimedia.es
 Author URI: http://www.ovimedia.es/
 Text Domain: wp-ovimedia-pack
-Version: 1.2.1
+Version: 1.3
 Plugin URI: http://www.ovimedia.es/
 */
 
@@ -23,7 +23,6 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
             add_action( 'init', array( $this, 'wop_save_options') );
             add_action( 'wp_footer', array( $this, 'wop_front_js_css') );
             add_action( 'admin_menu', array( $this, 'wop_admin_menu' ));
-            add_action( 'wp_footer', array( $this, 'wop_show_cookies' ), 1);
             add_action( 'admin_head', array( $this, 'wop_admin_js_css') );
 
             add_action( 'wp_ajax_wop_generate_pages', array( $this, 'wop_generate_pages') );
@@ -38,6 +37,16 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
 
             add_filter( 'login_headerurl', array( $this,'wop_logo_url_login') ); 
 
+            if($this->wop_options["enable_scroll_back"] == "on") 
+            {  
+                add_action( 'wp_footer', array( $this, 'wop_show_scroll_back' ), 10);
+            }
+
+            if($this->wop_options["enable_cookies"] == "on") 
+            {  
+                add_action( 'wp_footer', array( $this, 'wop_show_cookies' ), 1);
+            }
+            
             if($this->wop_options["enable_floating_widget"] == "on") 
             {  
                 add_action( 'widgets_init', array( $this, 'floating_widget') );
@@ -97,6 +106,9 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
             wp_register_style( 'wop_style_css', WP_PLUGIN_URL. '/'.basename( dirname( __FILE__ ) ).'/css/wop_style.css', false, '1.0.0' );
             wp_enqueue_style( 'wop_style_css' );
 
+            wp_register_style( 'font_awesome', WP_PLUGIN_URL. '/'.basename( dirname( __FILE__ ) ).'/css/font-awesome.min.css', false, '1.0.0' );
+            wp_enqueue_style( 'font_awesome' );
+
             wp_enqueue_script( 'wop_front_script', WP_PLUGIN_URL. '/'.basename( dirname( __FILE__ ) ).'/js/wop.js', array('jquery') );
         }
 
@@ -137,7 +149,8 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
                             "login.php",
                             "footer.php",
                             "contact_forms.php",
-                            "floating_widget.php");
+                            "floating_widget.php",
+                            "scroll_back.php");
                 
                 ?>
                 
@@ -166,7 +179,8 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
                     include_once $url.$sections[3];
                     include_once $url.$sections[4];
                     include_once $url.$sections[5];
-                    include_once $url.$sections[6];          
+                    include_once $url.$sections[6];    
+                    include_once $url.$sections[7];        
                 ?>
                 
                 <p><input type="submit" value="<?php echo translate( 'Save changes', 'wp-ovimedia-pack' )  ?>" class="button button-primary" /></div></p>
@@ -425,6 +439,25 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
                     'after_title' => '</h3>'
                 ) 
             );   
+        }
+
+        public function wop_show_scroll_back()
+        {
+            echo "<div id='scroll_back_btn'><i class='fa fa-arrow-up' ></i> </div>" ; 
+
+            echo "<style>";
+            echo "#scroll_back_btn{bottom: ".$this->wop_options["scroll_back_bottom_right_margin"]." !important;";
+            echo "right: ".$this->wop_options["scroll_back_bottom_right_margin"]." !important;";
+            echo "background-color: ".$this->wop_options["scroll_back_background_color"].";";
+            echo "color: ".$this->wop_options["scroll_back_icon_color"].";";
+            echo "width: ".$this->wop_options["scroll_back_size"]."px;";
+            echo "height: ".$this->wop_options["scroll_back_size"]."px;";
+            echo "font-size: ".$this->wop_options["scroll_back_size"]."px;";
+            echo "padding: ".$this->wop_options["scroll_back_padding"].";";
+            echo "border-radius: ".$this->wop_options["scroll_back_radius"].";}";
+            echo "#scroll_back_btn:hover{background-color: ".$this->wop_options["scroll_back_hover_background_color"].";";
+            echo "color: ".$this->wop_options["scroll_back_hover_icon_color"].";";
+            echo "}</style>";
         }
 
         public function wop_custom_login_redirect()

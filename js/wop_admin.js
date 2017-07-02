@@ -152,6 +152,25 @@ jQuery(document).ready(function(jQuery) {
         jQuery("#floating_widget_container .js-switch").prop('disabled', false);
     }
 
+    jQuery("#scroll_back_container .js-switch").change(function() {
+
+        if (jQuery("#scroll_back_container .js-switch").is(':checked')) {
+            jQuery("#scroll_back_container input, #scroll_back_container select").prop('disabled', false);
+        } else {
+            jQuery("#scroll_back_container input, #scroll_back_container select").prop('disabled', 'disabled');
+            jQuery("#scroll_back_container .js-switch").prop('disabled', false);
+        }
+
+    });
+
+    if (!jQuery("#scroll_back_container .js-switch").is(':checked')) {
+        jQuery("#scroll_back_container input, #scroll_back_container select").prop('disabled', 'disabled');
+        jQuery("#scroll_back_container .js-switch").prop('disabled', false);
+    }
+
+
+
+
     if (jQuery('.set_custom_logo').length > 0) {
         if (typeof wp !== 'undefined' && wp.media && wp.media.editor) {
             jQuery(document).on('click', '.set_custom_logo', function(e) {

@@ -105,4 +105,20 @@ jQuery(document).ready(function($) {
             }
         }
     });
+
+    jQuery("#scroll_back_btn").click(function() {
+        jQuery('html,body').animate({ scrollTop: 0 }, 'slow');
+        return false;
+    });
+
+    window.onscroll = function() { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            jQuery("#scroll_back_btn").fadeIn(400);
+        } else {
+            jQuery("#scroll_back_btn").fadeOut(400);
+        }
+    }
+
 });

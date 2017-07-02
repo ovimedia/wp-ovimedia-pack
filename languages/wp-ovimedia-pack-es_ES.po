@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2017-07-01 20:17+0200\n"
+"PO-Revision-Date: 2017-07-02 19:21+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -378,3 +378,33 @@ msgstr "Acción del botón flotante:"
 
 msgid "Link"
 msgstr "Enlace"
+
+msgid "Scroll Back"
+msgstr "Retorno de página"
+
+msgid "Enable scroll back:"
+msgstr "Activar retorno de página:"
+
+msgid "Scroll back bottom and right margin:"
+msgstr "Margin inferior y derecho del retorno de página:"
+
+msgid "Scroll back size:"
+msgstr "Tamaño del retorno de página:"
+
+msgid "Scroll back radius:"
+msgstr "Ángulo del retorno de página:"
+
+msgid "Scroll back padding:"
+msgstr "Espaciado del retorno de página:"
+
+msgid "Scroll back background color:"
+msgstr "Color de fondo del retorno de página:"
+
+msgid "Scroll back icon color:"
+msgstr "Color del icono del retorno de página:"
+
+msgid "Scroll back hover background color:"
+msgstr "Cambio del color de fondo del retorno de página:"
+
+msgid "Scroll back hover icon color:"
+msgstr "Cambio del color de icono del retorno de página:"
