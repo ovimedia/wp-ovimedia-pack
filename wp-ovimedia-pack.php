@@ -5,7 +5,7 @@ Description: Pack of functional modules for Wordpress.
 Author: Ovi García - ovimedia.es
 Author URI: http://www.ovimedia.es/
 Text Domain: wp-ovimedia-pack
-Version: 1.3
+Version: 1.3.1
 Plugin URI: http://www.ovimedia.es/
 */
 

@@ -63,6 +63,14 @@
         </select>
     </p>
 
+    <p><label for="floating_widget_icon"><?php echo translate( 'Widget button icon:', 'wp-ovimedia-pack' ); ?></label>
+
+    <input type="text"  id="floating_widget_icon" name="floating_widget_icon" 
+
+    placeholder="<?php echo translate( 'Font Awesome code: fa-...', 'wp-ovimedia-pack' ); ?>" 
+
+    value="<?php echo $this->wop_options['floating_widget_icon']; ?>" /></p>
+
 
     <p><label for="floating_widget_button_text"><?php echo translate( 'Widget button text:', 'wp-ovimedia-pack' ); ?></label>
 
