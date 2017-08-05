@@ -5,7 +5,7 @@ Description: Pack of functional modules for Wordpress.
 Author: Ovi García - ovimedia.es
 Author URI: http://www.ovimedia.es/
 Text Domain: wp-ovimedia-pack
-Version: 1.3.1
+Version: 1.3.2
 Plugin URI: http://www.ovimedia.es/
 */
 
@@ -122,6 +122,9 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
 
             wp_register_style( 'wop_switchery_style_css', WP_PLUGIN_URL. '/'.basename( dirname( __FILE__ ) ).'/css/switchery.min.css', false, '1.0.0' );
             wp_enqueue_style( 'wop_switchery_style_css' );
+
+            wp_register_style( 'font_awesome', WP_PLUGIN_URL. '/'.basename( dirname( __FILE__ ) ).'/css/font-awesome.min.css', false, '1.0.0' );
+            wp_enqueue_style( 'font_awesome' );
        
             wp_register_style( 'codes_select2_css', WP_PLUGIN_URL. '/'.basename( dirname( __FILE__ ) ).'/css/select2.min.css', false, '1.0.0' );
 
@@ -307,6 +310,10 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
 
         public function wop_show_floating_widget()
         {
+            if($this->wop_options['floating_widget_button_mode'] == "link")
+                echo "<a style='color: ".$this->wop_options['floating_widget_button_font_color'].";' 
+                href='".$this->wop_options['floating_widget_url']."'>";
+
             echo "<div id='floating_widget_button_".$this->wop_options['floating_widget_location']."' ";
             
             if($this->wop_options['floating_widget_button_mode'] == "link") echo "class='floating_button_url' ";
@@ -314,15 +321,13 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
             echo "style='background-color: ".$this->wop_options['floating_widget_button_background_color'].";
             color: ".$this->wop_options['floating_widget_button_font_color'].";' >" ; 
             
-            if($this->wop_options['floating_widget_button_mode'] == "link")
-            {
-                echo "<a style='color: ".$this->wop_options['floating_widget_button_font_color'].";' 
-                href='".$this->wop_options['floating_widget_url']."'>";
-                echo $this->wop_options['floating_widget_button_text']."</a></div>";
-            }
-            else
-                echo $this->wop_options['floating_widget_button_text']."</div>";
+            if($this->wop_options['floating_widget_icon'] != "")
+                echo "<i style='padding-right: 8px' class='fa ".$this->wop_options['floating_widget_icon']."'></i> "; 
 
+            echo $this->wop_options['floating_widget_button_text']."</div>";
+
+            if($this->wop_options['floating_widget_button_mode'] == "link") echo "</a>";
+            
             echo "<div id='floating_widget_".$this->wop_options['floating_widget_location']."'
             class='".$this->wop_options['floating_widget_location']."_hide'>";
 

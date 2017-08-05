@@ -219,11 +219,15 @@
     cursor: pointer;
     bottom: 10px;
     right: 10px;
-    transition: background-color 0.5s;
-    -webkit-transition: background-color 0.5s;
+    transition: background-color 0.7s;
+    -webkit-transition: background-color 0.7s;
+    transition: color 0.7s;
+    -webkit-transition: color 0.7s;
 }
 
 #scroll_back_btn:hover {
-    transition: background-color 0.5s;
-    -webkit-transition: background-color 0.5s;
+    transition: background-color 0.7s;
+    -webkit-transition: background-color 0.7s;
+    transition: color 0.7s;
+    -webkit-transition: color 0.7s;
 }
