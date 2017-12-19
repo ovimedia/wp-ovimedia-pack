@@ -227,5 +227,5 @@ jQuery(document).ready(function(jQuery) {
         });
     });
 
-    jQuery('.wrap_wop_form .select2').select2({ tags: true });
+    jQuery('.wrap_wop_form .select2, #floating_widget_icon').select2({ tags: true });
 });
