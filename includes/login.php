@@ -33,23 +33,19 @@
         echo " >".translate( 'Default', 'wp-ovimedia-pack' )."</option>";  
         
 
-        $ruta = '../wp-content/plugins/wp-ovimedia-pack/themes/';
+        $themes = array("black", "blue","brown", "default","green","orange","pink","purple","red","yellow");
                 
-        if ($themes = opendir($ruta)) 
+        foreach ($themes as $css) 
         {
-            while (false !== ($css = readdir($themes))) 
-                if ($css != "." && $css != ".." && $css != "default.css") 
-                {
-                    echo '<option value="'.$css.'" ';
+            echo '<option value="'.$css.'" ';
 
-                    if($this->wop_options['theme_login'] == $css)
-                        echo ' selected="selected" ';
-                    
-                    echo ' >'.translate(ucfirst (substr($css,0,-4)), 'wp-ovimedia-pack' ) .'</option>'; 
-                }
+            if($this->wop_options['theme_login'] == $css)
+                echo ' selected="selected" ';
+            
+            echo ' >'.translate(ucfirst ($css), 'wp-ovimedia-pack' ) .'</option>'; 
+        }
 
-            closedir($themes);
-        } ?>
+         ?>
 
         </select>
 

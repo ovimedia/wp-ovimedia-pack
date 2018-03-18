@@ -5,7 +5,7 @@ Description: Pack of functional modules for Wordpress.
 Author: Ovi García - ovimedia.es
 Author URI: http://www.ovimedia.es/
 Text Domain: wp-ovimedia-pack
-Version: 1.3.3
+Version: 1.3.4
 Plugin URI: http://www.ovimedia.es/
 */
 
@@ -257,7 +257,7 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
         public function wop_custom_login_style()
         {
             echo "<link rel='stylesheet' id='style-css'  
-            href='".WP_PLUGIN_URL."/".basename( dirname( __FILE__ ) )."/themes/".$this->wop_options['theme_login']."' type='text/css' media='screen' />";
+            href='".WP_PLUGIN_URL."/".basename( dirname( __FILE__ ) )."/themes/".$this->wop_options['theme_login'].".css' type='text/css' media='screen' />";
 
             $logo =  wp_get_attachment_image_src($this->wop_options['login_logo_image'], "medium");
             $background =  wp_get_attachment_image_src($this->wop_options['login_background_image'], "full");
