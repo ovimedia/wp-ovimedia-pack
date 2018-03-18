@@ -23,9 +23,15 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
             add_action( 'init', array( $this, 'wop_save_options') );
             add_action( 'wp_footer', array( $this, 'wop_front_js_css') );
             add_action( 'admin_menu', array( $this, 'wop_admin_menu' ));
+            add_action( 'admin_head', array( $this, 'wop_admin_js_css') );
 
             add_action( 'wp_ajax_wop_generate_pages', array( $this, 'wop_generate_pages') );
             add_action( 'wp_ajax_wop_generate_forms', array( $this, 'wop_generate_forms') );
+
+            add_action ( 'admin_enqueue_scripts', function () {
+                if (is_admin ())
+                    wp_enqueue_media ();
+            } );
 
             $this->wop_options = json_decode(get_option("wop_options"), true);
 
@@ -82,8 +88,6 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
         {	
             $menu = add_menu_page( 'Ovimedia Pack', 'Ovimedia Pack', 'read',  
                                   'wp-ovimedia-pack', array( $this,'wop_form'), 'dashicons-screenoptions', 50);
-
-            add_action( 'admin_print_scripts-' . $menu, array( $this, 'wop_admin_js_css') );                     
         }         
                        
         public function wop_save_options() 
@@ -92,7 +96,7 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
 				if( $page_viewed == "wop_save_options" ) {
                     
                     update_option("wop_options", json_encode($_REQUEST));
-					wp_redirect(get_admin_url()."?page=wp-ovimedia-pack");
+					wp_redirect(get_admin_url()."admin.php?page=wp-ovimedia-pack");
 				    exit();
 			     }
 		}
@@ -137,7 +141,7 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
         {
             ?><div class="wrap_wop_form">
 
-            <form method="post" action="<?php echo get_admin_url(); ?>/wop_save_options">
+            <form method="post" action="<?php echo get_admin_url(); ?>wop_save_options">
 
             <?php 
 
