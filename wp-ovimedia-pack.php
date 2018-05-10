@@ -416,7 +416,9 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
             .floating_widget_button h4,
             .floating_widget_button h5,
             .floating_widget_button h6,
-            .floating_widget_button span{color: ".$this->wop_options['floating_widget_button_font_color'].";}";
+            .floating_widget_button span{
+            color: ".$this->wop_options['floating_widget_button_font_color'].";
+            font-size: ".$this->wop_options['floating_widget_button_font_size']."px;}";
 
             if($this->wop_options['floating_widget_rotated'] == "yes")
             {
@@ -424,12 +426,14 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
                     -ms-transform: rotate(90deg);
                     -webkit-transform: rotate(90deg);
                     transform: rotate(90deg);
+                    border-radius: 15px 15px 0px 0px !important;
                 }
 
                 #floating_widget_button_right {
                     -ms-transform: rotate(270deg);
                     -webkit-transform: rotate(270deg);
                     transform: rotate(270deg);
+                    border-radius: 15px 15px 0px 0px !important;
                 }";
             }
 

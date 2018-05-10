@@ -58,6 +58,31 @@
 
     value="<?php echo $this->wop_options['floating_widget_height']; ?>" /></p>
 
+
+
+
+   	<p><label for="floating_widget_button_font_size"><?php echo translate( 'Floating button action:', 'wp-ovimedia-pack' ); ?></label>
+
+        <select id="floating_widget_button_font_size" name="floating_widget_button_font_size" >
+
+            <?php           
+
+                for ($x = 10; $x < 36; $x++) 
+                { 
+                    echo "<option value='".$x."' ";                             
+
+                    if($this->wop_options['floating_widget_button_font_size'] == $x) 
+                        echo ' selected="selected" '; 
+
+                    echo ">".$x."px</option>"; 
+
+                } 
+
+            ?>
+        </select>
+    </p>
+
+
    	<p><label for="floating_widget_button_mode"><?php echo translate( 'Floating button action:', 'wp-ovimedia-pack' ); ?></label>
 
 		<select id="floating_widget_button_mode" name="floating_widget_button_mode" >
@@ -106,6 +131,13 @@
 		</select>
 	</p>
 
+    <p><label for="floating_widget_transition_delay"><?php echo translate( 'Widget delay appearance:', 'wp-ovimedia-pack' ); ?></label>
+
+    <input type="text"  id="floating_widget_transition_delay" name="floating_widget_transition_delay" 
+
+    value="<?php echo $this->wop_options['floating_widget_transition_delay']; ?>" 
+    placeholder="<?php echo translate( 'In seconds', 'wp-ovimedia-pack' ); ?>" /></p>
+
 
     <p><label for="floating_widget_button_background_color"><?php echo translate( 'Widget button background color:', 'wp-ovimedia-pack' ); ?></label>
 
@@ -132,11 +164,6 @@
 
     class="jscolor" value="<?php echo $this->wop_options['floating_widget_font_color']; ?>" /></p>
 
-    <p><label for="floating_widget_transition_delay"><?php echo translate( 'Widget delay appearance:', 'wp-ovimedia-pack' ); ?></label>
 
-    <input type="text"  id="floating_widget_transition_delay" name="floating_widget_transition_delay" 
-
-     value="<?php echo $this->wop_options['floating_widget_transition_delay']; ?>" 
-     placeholder="<?php echo translate( 'In seconds', 'wp-ovimedia-pack' ); ?>" /></p>
 
 </div>

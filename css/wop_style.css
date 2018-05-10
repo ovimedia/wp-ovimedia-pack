@@ -158,18 +158,22 @@
 
 #floating_widget_button_bottom {
     bottom: 0px;
+    border-radius: 15px 15px 0px 0px;
 }
 
 #floating_widget_button_top {
     top: 0px;
+    border-radius: 0px 0px 15px 15px;
 }
 
 #floating_widget_button_right {
     right: 0px;
+    border-radius: 15px 0px 0px 15px;
 }
 
 #floating_widget_button_left {
     left: 0px;
+    border-radius: 0px 15px 15px 0px;
 }
 
 #floating_widget_top,
