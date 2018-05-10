@@ -5,7 +5,7 @@ Description: Pack of functional modules for Wordpress.
 Author: Ovi García - ovimedia.es
 Author URI: http://www.ovimedia.es/
 Text Domain: wp-ovimedia-pack
-Version: 1.3.5
+Version: 1.4
 Plugin URI: http://www.ovimedia.es/
 */
 
@@ -310,28 +310,25 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
 
         public function wop_show_floating_widget()
         {
-            if($this->wop_options['floating_widget_button_mode'] == "link")
-                echo "<a style='color: ".$this->wop_options['floating_widget_button_font_color'].";' 
-                href='".$this->wop_options['floating_widget_url']."'>";
 
-            echo "<div id='floating_widget_button_".$this->wop_options['floating_widget_location']."' ";
+            echo "<div class='floating_widget_button ";
+
+            if($this->wop_options['floating_widget_button_mode'] != "widget")
+                echo " floating_button_url ";
+           
+            echo "' id='floating_widget_button_".$this->wop_options['floating_widget_location']."' ";
             
-            if($this->wop_options['floating_widget_button_mode'] == "link") echo "class='floating_button_url' ";
-
             echo "style='background-color: ".$this->wop_options['floating_widget_button_background_color'].";
             color: ".$this->wop_options['floating_widget_button_font_color'].";' >" ; 
             
-            if($this->wop_options['floating_widget_icon'] != "")
-                echo "<i style='padding-right: 8px' class='fa ".$this->wop_options['floating_widget_icon']."'></i> "; 
+            dynamic_sidebar( 'floating_widget_button' );	
 
-            echo $this->wop_options['floating_widget_button_text']."</div>";
+            echo "</div>";
 
-            if($this->wop_options['floating_widget_button_mode'] == "link") echo "</a>";
-            
             echo "<div id='floating_widget_".$this->wop_options['floating_widget_location']."'
             class='".$this->wop_options['floating_widget_location']."_hide'>";
 
-            dynamic_sidebar( 'floating_widget' );	
+                dynamic_sidebar( 'floating_widget' );	
 
             echo "</div>";
 
@@ -411,6 +408,31 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
             #floating_widget_".$this->wop_options['floating_widget_location']." h6{
             color: ".$this->wop_options['floating_widget_font_color']." !important;}";
 
+            echo ".floating_widget_button p, 
+            .floating_widget_button a,
+            .floating_widget_button h1,
+            .floating_widget_button h2,
+            .floating_widget_button h3,
+            .floating_widget_button h4,
+            .floating_widget_button h5,
+            .floating_widget_button h6,
+            .floating_widget_button span{color: ".$this->wop_options['floating_widget_button_font_color'].";}";
+
+            if($this->wop_options['floating_widget_rotated'] == "yes")
+            {
+                echo "#floating_widget_button_left {
+                    -ms-transform: rotate(90deg);
+                    -webkit-transform: rotate(90deg);
+                    transform: rotate(90deg);
+                }
+
+                #floating_widget_button_right {
+                    -ms-transform: rotate(270deg);
+                    -webkit-transform: rotate(270deg);
+                    transform: rotate(270deg);
+                }";
+            }
+
             echo "</style>";
 
         }
@@ -434,6 +456,17 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
 
         public function floating_widget() 
         {
+            register_sidebar( 
+                array(
+                    'name' => "Floating Widget Button",
+                    'id' => 'floating_widget_button',
+                    'before_widget' => '<div class="widget">',
+                    'after_widget' => '</div>',
+                    'before_title' => '<h3>',
+                    'after_title' => '</h3>'
+                ) 
+            );   
+
             register_sidebar( 
                 array(
                     'name' => "Floating Widget",

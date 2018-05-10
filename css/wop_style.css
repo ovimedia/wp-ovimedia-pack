@@ -129,14 +129,12 @@
     position: fixed;
     z-index: 9999;
     padding: 8px 40px;
-    border-radius: 15px 15px 0px 0px;
 }
 
 #floating_widget_button_top {
     position: fixed;
     z-index: 9999;
     padding: 8px 40px;
-    border-radius: 0px 0px 15px 15px;
 }
 
 #floating_widget_button_right {
@@ -172,18 +170,6 @@
 
 #floating_widget_button_left {
     left: 0px;
-}
-
-#floating_widget_button_left {
-    -ms-transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-
-#floating_widget_button_right {
-    -ms-transform: rotate(270deg);
-    -webkit-transform: rotate(270deg);
-    transform: rotate(270deg);
 }
 
 #floating_widget_top,
@@ -240,7 +226,6 @@
         transform: rotate(0deg);
         text-align: center !important;
         padding: 15px 0px !important;
-        border-radius: 0px !important;
         z-index: 999999999 !important;
     }
     .right_button_show,
