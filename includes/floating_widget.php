@@ -42,6 +42,22 @@
 
     value="<?php echo $this->wop_options['floating_widget_position']; ?>" /></p>
 
+    <p><label for="floating_widget_width"><?php echo translate( 'Widget width:', 'wp-ovimedia-pack' ); ?></label>
+
+    <input type="text"  id="floating_widget_width" name="floating_widget_width" 
+
+    placeholder="<?php echo translate( 'px or %', 'wp-ovimedia-pack' ); ?>" 
+
+    value="<?php echo $this->wop_options['floating_widget_width']; ?>" /></p>
+
+    <p><label for="floating_widget_height"><?php echo translate( 'Widget height:', 'wp-ovimedia-pack' ); ?></label>
+
+    <input type="text"  id="floating_widget_height" name="floating_widget_height" 
+
+    placeholder="<?php echo translate( 'px or %', 'wp-ovimedia-pack' ); ?>" 
+
+    value="<?php echo $this->wop_options['floating_widget_height']; ?>" /></p>
+
    	<p><label for="floating_widget_button_mode"><?php echo translate( 'Floating button action:', 'wp-ovimedia-pack' ); ?></label>
 
 		<select id="floating_widget_button_mode" name="floating_widget_button_mode" >
@@ -103,22 +119,6 @@
 
     class="jscolor" value="<?php echo $this->wop_options['floating_widget_button_font_color']; ?>" /></p>
 
-
-    <p><label for="floating_widget_width"><?php echo translate( 'Widget width:', 'wp-ovimedia-pack' ); ?></label>
-
-    <input type="text"  id="floating_widget_width" name="floating_widget_width" 
-
-    placeholder="<?php echo translate( 'px or %', 'wp-ovimedia-pack' ); ?>" 
-
-    value="<?php echo $this->wop_options['floating_widget_width']; ?>" /></p>
-
-    <p><label for="floating_widget_height"><?php echo translate( 'Widget height:', 'wp-ovimedia-pack' ); ?></label>
-
-    <input type="text"  id="floating_widget_height" name="floating_widget_height" 
-
-    placeholder="<?php echo translate( 'px or %', 'wp-ovimedia-pack' ); ?>" 
-
-    value="<?php echo $this->wop_options['floating_widget_height']; ?>" /></p>
 
     <p><label for="floating_widget_background_color"><?php echo translate( 'Widget background color:', 'wp-ovimedia-pack' ); ?></label>
 
