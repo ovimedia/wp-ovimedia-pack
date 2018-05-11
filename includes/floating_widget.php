@@ -58,10 +58,7 @@
 
     value="<?php echo $this->wop_options['floating_widget_height']; ?>" /></p>
 
-
-
-
-   	<p><label for="floating_widget_button_font_size"><?php echo translate( 'Floating button action:', 'wp-ovimedia-pack' ); ?></label>
+   	<p><label for="floating_widget_button_font_size"><?php echo translate( 'Widget button font size:', 'wp-ovimedia-pack' ); ?></label>
 
         <select id="floating_widget_button_font_size" name="floating_widget_button_font_size" >
 

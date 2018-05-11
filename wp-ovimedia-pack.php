@@ -5,7 +5,7 @@ Description: Pack of functional modules for Wordpress.
 Author: Ovi García - ovimedia.es
 Author URI: http://www.ovimedia.es/
 Text Domain: wp-ovimedia-pack
-Version: 1.4
+Version: 1.4.1
 Plugin URI: http://www.ovimedia.es/
 */
 
@@ -186,9 +186,10 @@ if ( ! class_exists( 'wp_ovimedia_pack' ) )
                     include_once $url.$sections[7];        
                 ?>
                 
-                <p><input type="submit" value="<?php echo translate( 'Save changes', 'wp-ovimedia-pack' )  ?>" class="button button-primary" /></div></p>
-           
-                <div id="messages_plugin" ></div>
+                <p><input type="submit" value="<?php echo translate( 'Save changes', 'wp-ovimedia-pack' )  ?>" class="button button-primary" /></p>
+            
+                    <div id="messages_plugin" ></div>
+                </div>
             </form>
 
           </div><?php 
